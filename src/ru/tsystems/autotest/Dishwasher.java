@@ -1,11 +1,11 @@
 package ru.tsystems.autotest;
 
-import static ru.tsystems.autotest.Display.*;
+import static ru.tsystems.autotest.Status.*;
 
-public class Dishwasher<contents> {
+public class Dishwasher {
 
     private int contents;
-    private Display status;
+    private Status status;
 
     Dishwasher(int contents) {
         if (contents > 0) {
@@ -23,15 +23,15 @@ public class Dishwasher<contents> {
     /**
      * This method performs add dishes
      *
-     * @throws MyException if the dishwasher is started or overloaded
+     * @throws ProgramStartedException if the dishwasher is started or overloaded
      */
 
     public void addDish() {
         if (status == START) {
-            throw new MyException("Can't add dish during cycle");
+            throw new ProgramStartedException("Can't add dish during cycle");
 
         } else if (contents > 10) {
-            throw new MyException("The dishwasher is overloaded");
+            throw new ProgramStartedException("The dishwasher is overloaded");
         }else {
             System.out.println("The dishes were added");
         }
@@ -42,14 +42,14 @@ public class Dishwasher<contents> {
     /**
      * This method performs start
      *
-     * @throws MyException2 if Contents is less than 0
+     * @throws EmptyDishwasherException if Contents is less than 0
      */
 
 
     public void start() {
         if (contents <= 0) {
 
-            throw new MyException2("Can't start, add some dishes");
+            throw new EmptyDishwasherException("Can't start, add some dishes");
 
         } else {
             for ( int contents = 0; contents <= 10; contents++){
@@ -62,14 +62,14 @@ public class Dishwasher<contents> {
     /**
      * This method performs getting dishes
      *
-     * @throws MyException if the dishwasher is started
+     * @throws ProgramStartedException if the dishwasher is started
      */
 
 
 
     public void getContents() {
         if (status == START) {
-            throw new MyException("Stop the dishwasher");
+            throw new ProgramStartedException("Stop the dishwasher");
 
         } else {
             System.out.println("Please take dishes");
@@ -80,12 +80,12 @@ public class Dishwasher<contents> {
     /**
      * This method performs stop
      *
-     * @throws MyException3 if the dishwasher is stopped
+     * @throws ProgramStoppedException if the dishwasher is stopped
      */
     public void stop() {
 
         if (status == STOP) {
-            throw new MyException3("The dishwasher is stopped");
+            throw new ProgramStoppedException("The dishwasher is stopped");
         } else {
             status = STOP;
         }
