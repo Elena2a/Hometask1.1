@@ -16,7 +16,6 @@ public class Dishwasher {
         this.contents = contents;
         this.status = status;
 
-
     }
 
 
@@ -32,7 +31,7 @@ public class Dishwasher {
 
         } else if (contents > 10) {
             throw new ProgramStartedException("The dishwasher is overloaded");
-        }else {
+        } else {
             System.out.println("The dishes were added");
         }
 
@@ -52,7 +51,7 @@ public class Dishwasher {
             throw new EmptyDishwasherException("Can't start, add some dishes");
 
         } else {
-            for ( int contents = 0; contents <= 10; contents++){
+            for ( int contents = 0; contents <= 10; contents++ ) {
                 System.out.println("You can start");
 
             }
@@ -64,7 +63,6 @@ public class Dishwasher {
      *
      * @throws ProgramStartedException if the dishwasher is started
      */
-
 
 
     public void getContents() {

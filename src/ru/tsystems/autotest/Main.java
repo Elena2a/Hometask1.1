@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Dishwasher dishy = new Dishwasher (10);
+        Dishwasher dishy = new Dishwasher(10);
         dishy.start();
         dishy.addDish();
         dishy.addDish();
@@ -14,8 +14,6 @@ public class Main {
         dishy.stop();
         dishy.status();
         dishy.addDish();
-
-
 
     }
 }
