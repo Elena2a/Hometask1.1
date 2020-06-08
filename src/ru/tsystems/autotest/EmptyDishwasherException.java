@@ -6,3 +6,4 @@ public class EmptyDishwasherException extends RuntimeException {
         super(description);
     }
 }
+

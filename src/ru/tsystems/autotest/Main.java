@@ -14,9 +14,9 @@ public class Main {
         dishy.stop();
         dishy.status();
         dishy.addDish();
-
     }
 }
+
 
 
 
