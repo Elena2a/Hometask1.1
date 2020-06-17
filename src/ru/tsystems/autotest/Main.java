@@ -6,14 +6,16 @@ public class Main {
 
         Dishwasher dishy = new Dishwasher(10);
         dishy.start();
-        dishy.addDish();
-        dishy.addDish();
+        dishy.addDish("plate");
+        dishy.addDish("fork");
+        dishy.addDish("spoon");
         dishy.getContents();
-        dishy.start();
-        dishy.addDish();
+        dishy.addDish("bowl");
         dishy.stop();
         dishy.status();
-        dishy.addDish();
+        dishy.addDish("bowl");
+        dishy.addDish("bowl");
+
     }
 }
 

@@ -9,6 +9,7 @@ public class Dishwasher {
 
     Dishwasher(int contents) {
         if (contents > 0) {
+            System.out.println("The dishwasher is loaded");
         } else if (contents < 0) {
             throw new RuntimeException("Can't start");
         }
@@ -22,7 +23,7 @@ public class Dishwasher {
      * @throws ProgramStartedException if the dishwasher is started
      * @throws OverloadedDishwasherException if the dishwasher is overloaded
      */
-    public void addDish() {
+    public void addDish(String dish) {
         if (status == START) {
             throw new ProgramStartedException("Can't add dish during cycle");
         } else if (contents > 10) {
