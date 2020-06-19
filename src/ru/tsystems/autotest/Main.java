@@ -15,7 +15,6 @@ public class Main {
         dishy.status();
         dishy.addDish("bowl");
         dishy.addDish("bowl");
-
     }
 }
 

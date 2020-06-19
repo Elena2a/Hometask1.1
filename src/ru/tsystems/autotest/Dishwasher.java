@@ -6,6 +6,8 @@ public class Dishwasher {
 
     private int contents;
     private Status status;
+    private String[] capacity;
+    int dishesCount;
 
     Dishwasher(int contents) {
         if (contents > 0) {
@@ -20,13 +22,16 @@ public class Dishwasher {
     /**
      * This method performs add dishes
      *
-     * @throws ProgramStartedException if the dishwasher is started
+     * @throws ProgramStartedException       if the dishwasher is started
      * @throws OverloadedDishwasherException if the dishwasher is overloaded
      */
     public void addDish(String dish) {
         if (status == START) {
             throw new ProgramStartedException("Can't add dish during cycle");
-        } else if (contents > 10) {
+        } else if (dishesCount < capacity.length) {
+            capacity[dishesCount] = dish;
+            dishesCount++;
+        } else if (dishesCount > capacity.length) {
             throw new OverloadedDishwasherException("The dishwasher is overloaded");
         } else {
             System.out.println("The dishes were added");
@@ -72,7 +77,7 @@ public class Dishwasher {
         } else {
             status = STOP;
         }
-            }
+    }
 
     public void status() {
         if (status == Status.START) {
@@ -81,7 +86,7 @@ public class Dishwasher {
             System.out.println("The dishwasher is stopped.");
         }
     }
-    }
+}
 
 
 
