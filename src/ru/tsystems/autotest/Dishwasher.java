@@ -17,6 +17,8 @@ public class Dishwasher {
         }
         this.contents = contents;
         this.status = status;
+        this.capacity = capacity;
+        this.dishesCount = dishesCount;
     }
 
     /**
@@ -47,7 +49,7 @@ public class Dishwasher {
         if (contents <= 0) {
             throw new EmptyDishwasherException("Can't start, add some dishes");
         } else {
-            for ( int contents = 0; contents <= 10; contents++ ) {
+            for ( int contents = 0; contents <= capacity.length; contents++ ) {
                 System.out.println("You can start");
             }
         }
